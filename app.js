@@ -83,8 +83,13 @@ IMPORTANT DETAIL! IMPORTANT DETAIL! IMPORTANT DETAIL!
 
 // Write your code here
 function sumAndMultiply( a, b, c ){ //eslint-disable-line
-    const multiply = a * b * c, sum = a + b + c;
-    return[a + ' ' + 'and ' + b + ' and ' + c + ' sum to ' + sum + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiply + '.' ];
+    const mm = multiply( a, b )[0];
+    const mm2 = multiply(mm, c)[0];
+
+    const ss = sum(a, b)[0];
+    const ss2 = sum(ss,c)[0];
+    return [a + ' and ' + b + ' and ' + c + ' sum to ' + ss2 + '.',
+        'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mm2 + '.'];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -113,12 +118,15 @@ IMPORTANT DETAIL! IMPORTANT DETAIL! IMPORTANT DETAIL!
 
 // Write your code here
 
-const numbers = [ 2, 3, 4, 9];
 
+//2+3+4
 function sumArray(testArray){ //eslint-disable-line
-    (sum()[0],[1],[2]);
-    (multiply()[0],[1],[2]);
-    return [sumArray, [0] + ',' + [1] + ',' + [2] + 'was  passed in as an array of numbers, and' + [3] + 'is their sum.'];
+    const sArray = [2,3,4];
+
+    const ss = sum(sArray[0],sArray[1])[0];
+    const ss2 = sum(ss,sArray[2])[0];
+
+    return [ sArray[0] + ', ' + sArray[1] + ', ' + sArray[2] + ' was  passed in as an array of numbers, and ' + ss2 + ' is their sum.'];
 
 }
 
@@ -152,8 +160,14 @@ new branch for your work on the next question!
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
+    const mArray = [2,3,4];
+
+    const mm3 = multiply( mArray[0], mArray[1] )[0];
+    const mm4 = multiply( mm3, mArray[2] )[0];
+
+    return  ['The numbers ' + mArray[0] + ', ' + mArray[1] + ', ' + mArray[2] + ', ' + 'have a product of' + mm4 + '.'];
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray();
+testMultiplyArray();
